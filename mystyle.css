@@ -1,0 +1,60 @@
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: sans-serif;
+  }
+  
+  h1 {
+    color: navy;
+    margin-left: 30px;
+    font-family: sans-serif;
+    margin: 0 0 50px 0;
+    font-size: 50
+  }
+
+  h2 {
+    color: navy;
+    margin-left: 30px;
+    font-family: sans-serif;
+    margin: 0 0 50px 0;
+    font-size: 50
+  }
+
+  /*container div*/
+  .center-list {
+    text-align: center;
+  }
+
+  .center-list ul {
+
+    text-align: left; 
+    border: 2px solid black; 
+    padding: 23px;
+    margin: 23px; 
+    list-style-type: disc;
+  }
+
+  table tr:nth-child(even) {
+    background-color: #e2eda8;
+}
+
+table tr:nth-child(odd) {
+    background-color: #cfd0de;
+}
+
+div.applepie {
+  width: 300px;
+  height: 150px;
+  border: 6px solid #2b58d5;
+  display: inline-block;
+  vertical-align: center
+
+}
+
+ 
+th {
+  
+  text-align:right;
+
+}
+
+ 
