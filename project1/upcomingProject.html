@@ -10,22 +10,28 @@
 	  <style>
 
 		.hidden-element{
-			visibility: hidden;
+			visibility: visible;
 		}
+
+		@media(min-width: 800px) {
+			.hidden-element {
+				visibility: hidden;
+			}
+		
 
 		.container:hover .hidden-element{
 			visibility:visible;
 			
-		}
+		}}
 	</style>
 </head>
 
 
 <nav>
-	<a href="home.html">Home</a>
-	<a href="upcomingProject.html">Upcoming Projects</a>
-	<a href="tour.html">Tour</a>
-	<a href="contact.html">Contact</a>
+	<a href="home.html" style="font-size:40px">Home</a>
+	<a href="upcomingProject.html" style="font-size:40px">Upcoming Projects</a>
+	<a href="tour.html" style="font-size:40px">Tour</a>
+	<a href="contact.html" style="font-size:40px">Contact</a>
 
 </nav>
 	
@@ -59,9 +65,10 @@
 		</div>
 		
 		<div class="container"> 
-		<h2 class="flexbox-item flexbox-item-2 show-element" style="border:none"> HOVER TO REVEAL TRACKLIST</h2>
+		<h2 class="flexbox-item flexbox-item-2 show-element" style="border:none"> HOVER TO REVEAL TRACKLIST!</h2>
 			
 		<div class="flexbox-item flexbox-item-2 ">
+			
 			
 			<ol style = "font-size: 20px" class = "hidden-element">
 				<li>Lost & Found</li>
