@@ -9,16 +9,27 @@
   <link rel="stylesheet" href="mystyle_project1.css">
 	  <style>
 
-		.hidden-element{
+		
+
+		@media (hover: hover) {
+
+			.hidden-element{
 			visibility: hidden;
 		}
 
-
-		@media (hover: hover) {
             .container:hover .hidden-element {
                 visibility: visible;
             }
 		}
+
+		
+		@media (hover: none) {
+
+		.hidden-element{
+		visibility:visible;
+		}
+
+}
 
 	</style>
 </head>
@@ -51,7 +62,7 @@
 
 		<div class="flexbox-item flexbox-item-2"> 
 			<h2>  Our album, "Magnetic", will be released in January 2025!!. 
-				Peep the album art and tracklist below, and stay tuned for more updates!</h2>
+				Peep the album art and tracklist below, and stay tuned for more updatesss!</h2>
 
 		</div>
 
@@ -62,7 +73,7 @@
 		</div>
 		
 		<div class="container"> 
-		<h2 class="flexbox-item flexbox-item-2 show-element" style="border:none"> HOVER TO REVEAL TRACKLIST!</h2>
+		<h2 class="container flexbox-item flexbox-item-2 show-element" style="border:none"> HOVER TO REVEAL TRACKLIST!</h2>
 			
 		<div class="flexbox-item flexbox-item-2 ">
 			
