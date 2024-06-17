@@ -3,93 +3,78 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  
 <html>
 
-<head>
-	<title>Official Website of the Internet</title>
-  <link rel="stylesheet" href="mystyle_project1.css">
+	<head>
+		<title>Official Website of the Internet</title>
+		<link rel="stylesheet" href="mystyle_project1.css">
+	</head>
 
-</head>
+	<header> 
+		<nav style="position:fixed">
+			<ul>
+				<li>
+				</li>
+			</ul>
+			<!-- hamburger menu -->
+			<label for='menu' tabindex="0">
+				<i class="fas fa-bars"></i>
+			</label>
+			<input id='menu' type='checkbox' />
+			<!-- collapsable menu -->
+			<ul style="font-family:Anton;">
+				<li><a href="home.html"> Home </a></li>
+				<li><a href='upcomingProject.html'>Upcoming Projects</a></li>
+				<li><a href='tour.html'>Tour</a></li>
+				<li><a href='contact.html'>Contact</a></li>
+			</ul>
+		</nav>
+	</header>
 
-<header> 
-	<nav style="position:fixed">
-		<ul>
-			<li>
-				
-			</li>
-		</ul>
-		<!-- hamburger menu -->
-		<label for='menu' tabindex="0">
-			<i class="fas fa-bars"></i>
-		</label>
-		<input id='menu' type='checkbox' />
-		<!-- collapsable menu -->
-		<ul style="font-family:Anton;">
-			<li><a href="home.html"> Home </a></li>
-			<li><a href='upcomingProject.html'>Upcoming Projects</a></li>
-			<li><a href='tour.html'>Tour</a></li>
-			<li><a href='contact.html'>Contact</a></li>
-		</ul>
-	</nav>
-</header>
-
-<body>
-	
-	
-	<div class="flexbox-container" style="border:none; padding:none; margin:none; top:0%;"> 
-	  <div class="hero-image flexbox-item flexbox-item-3">
-	  <a href="https://open.spotify.com/artist/7GN9PivdemQRKjDt4z5Zv8/"><img src="images/spotify.png" alt="facebook icon" class="fixed-icon" style="width:42px;height:42px;"></a>
-	</div>
-	</div>
-	
-
-
-<div class = "flexbox-container"> 
-	<div class="flexbox-item flexbox-item-2"> <h2> Contact us!</h2></div>
-		<div class="flexbox-item flexbox-item-2"> 
-			
-<form> 
-
-	<table>
+	<body>
+		<div class="flexbox-container" style="border:none; padding:none; margin:none; top:0%;"> 
+			<div class="hero-image flexbox-item flexbox-item-3">
+				<a href="https://open.spotify.com/artist/7GN9PivdemQRKjDt4z5Zv8/"><img src="images/spotify.png" alt="facebook icon" class="fixed-icon" style="width:42px;height:42px;"></a>
+			</div>
+		</div>
 		
 
-		<tr>
-		  <th><label for="fname">First name:</label><br></th> 
-		  <td><input type="text" id="fname" name="fname"><br></td> 
-		</tr>
 
-		<tr>
-			<th><label for="lname">Last name:</label><br></th>
-			<td><input type="text" id="lname" name="lname"><br></td>
-		</tr>
-
-		<tr>
-			<th><label for="message">Message:</label><br></th>
-			<td>
-					<textarea class="center" id="textarea" name="messages" rows="20" cols=auto>
-					</textarea>
-
-		</tr>
-
-		<tr>
-			
+		<div class = "flexbox-container"> 
+			<div class="flexbox-item flexbox-item-2"> 
+				<h2> Contact us!
+				</h2>
+			</div>
 				
-				<td> <input type="submit"> </td>
-		</tr>
+			<div class="flexbox-item flexbox-item-2"> 
+					
+				<form> 
+					<table>
+						<tr>
+							<th><label for="fname">First name:</label><br></th> 
+							<td><input type="text" id="fname" name="fname"><br></td> 
+						</tr>
 
+						<tr>
+							<th><label for="lname">Last name:</label><br></th>
+							<td><input type="text" id="lname" name="lname"><br></td>
+						</tr>
 
-		</table>
+						<tr>
+							<th><label for="message">Message:</label><br></th>
+							<td>
+								<textarea class="center" id="textarea" name="messages" rows="20" cols=auto>
+								</textarea>
+						</tr>
 
-	</form>
+						<tr>
+							<td> <input type="submit"> 
+							</td>
+						</tr>
+
+					</table>
+				</form>
+			</div>
 		</div>
-
-	</div>
-
-
-    <hr />
-	
-
-
-</body>
+	</body>
 </html>

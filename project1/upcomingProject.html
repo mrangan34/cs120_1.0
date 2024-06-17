@@ -4,137 +4,115 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <html>
-	
-<head>
-	<title>
-		Official Website of the Internet
-	</title>
-
-  	<link rel="stylesheet" href="mystyle_project1.css">
-	
-	<style>
-
 		
+	<head>
+		<title>
+			Official Website of the Internet
+		</title>
 
-		@media (hover: hover) {
-			.hidden-element {
-			visibility: hidden;
-			}
-            .container:hover .hidden-element {
-                visibility: visible;
-            }
-
-			.mobile-text{
-			display:none;
-			}
-
-			.desktop-text{
-			display: inline-block;
-			}	
-		}
-
+		<link rel="stylesheet" href="mystyle_project1.css">
 		
-		@media (hover: none) {
+		<style>
+			/* If hover is available on device, hover to display tracklist */
+			@media (hover: hover) {
+				.hidden-element {
+				visibility: hidden;
+				}
+				.container:hover .hidden-element {
+					visibility: visible;
+				}
 
-			.hidden-element{
-			display: inline-block;
-			}
-			.mobile-text{
-			display: inline-block;
-
-			}
-			.desktop-text{
+				.mobile-text{
 				display:none;
+				}
+
+				.desktop-text{
+				display: inline-block;
+				}	
 			}
-		}
+			/* If hover isn't available on device, immediately display tracklist */
+			@media (hover: none) {
 
-	</style>
-</head>
+				.hidden-element{
+				display: inline-block;
+				}
+				.mobile-text{
+				display: inline-block;
+				}
+				.desktop-text{
+					display:none;
+				}
+			}
+
+		</style>
+	</head>
 
 
-<header> 
-	<nav style="position:fixed">
-		<ul>
-			<li>
+	<header> 
+		<nav style="position:fixed">
+			<ul>
+				<li>
+				</li>
+			</ul>
+			<!-- hamburger menu -->
+			<label for='menu' tabindex="0">
+				<i class="fas fa-bars"></i>
+			</label>
+			<input id='menu' type='checkbox' />
+			<!-- collapsable menu -->
+			<ul style="font-family:Anton;">
+				<li><a href="home.html"> Home </a></li>
+				<li><a href='upcomingProject.html'>Upcoming Projects</a></li>
+				<li><a href='tour.html'>Tour</a></li>
+				<li><a href='contact.html'>Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<body>
+	
+		<div class="flexbox-container" style="border:none; padding:none; margin:none; top:0%;"> 
+			<div class="hero-image flexbox-item flexbox-item-3">
+				<a href="https://open.spotify.com/artist/7GN9PivdemQRKjDt4z5Zv8/"><img src="images/spotify.png" alt="facebook icon" class="fixed-icon" style="width:42px;height:42px;"></a>
+			</div>
+		</div>
+		
+		<div class = "flexbox-container">
+			<div class="flexbox-item flexbox-item-2"> 
+				<h2>  Our album, "Magnetic", will be released in January 2025. 
+					Peep the album art and tracklist below, and stay tuned for more updates!
+				</h2>
+			</div>
+
+			<div style="background-color:none; border:none; border-radius: 0px;" class="flexbox-item flexbox-item-2">
+				<img src="images/magnetic.jpg" alt="Magnetic album cover">
+			</div>
+			
+			<div class="container"> 
+				<h2 class="container flexbox-item flexbox-item-2 show-element" style="border:none"> 
+					<span class="desktop-text">HOVER TO REVEAL TRACKLIST</span>
+					<span class="mobile-text">HERE'S THE TRACKLIST</span>
+				</h2>
 				
-			</li>
-		</ul>
-		<!-- hamburger menu -->
-		<label for='menu' tabindex="0">
-			<i class="fas fa-bars"></i>
-		</label>
-		<input id='menu' type='checkbox' />
-		<!-- collapsable menu -->
-		<ul style="font-family:Anton;">
-			<li><a href="home.html"> Home </a></li>
-			<li><a href='upcomingProject.html'>Upcoming Projects</a></li>
-			<li><a href='tour.html'>Tour</a></li>
-			<li><a href='contact.html'>Contact</a></li>
-		</ul>
-	</nav>
-</header>
-	
-
-	
-
-<body>
-	
-	
-	<div class="flexbox-container" style="border:none; padding:none; margin:none; top:0%;"> 
-	  <div class="hero-image flexbox-item flexbox-item-3">
-	  <a href="https://open.spotify.com/artist/7GN9PivdemQRKjDt4z5Zv8/"><img src="images/spotify.png" alt="facebook icon" class="fixed-icon" style="width:42px;height:42px;"></a>
-	</div>
-	</div>
-	
-	
-	  <div class = "flexbox-container">
-
-		<div class="flexbox-item flexbox-item-2"> 
-			<h2>  Our album, "Magnetic", will be released in January 2025. 
-				Peep the album art and tracklist below, and stay tuned for more updates!</h2>
-
+				<div class="flexbox-item flexbox-item-2 ">
+				
+					<ol style = "font-size: 20px" class = "hidden-element">
+						<li>Lost & Found</li>
+						<li>Echo</li>
+						<li>Neon Chamber</li>
+						<li>Horizontal Lines</li>
+						<li>Sunset Boulevard</li>
+						<li>Sonic Bloom</li>
+						<li>Sync</li>
+						<li>Undertow</li>
+						<li>Low Key</li>
+						<li>Stardust Serenade</li>
+						<li>Nebula</li>
+						<li>Solar Flares</li>
+						<li>Electric Tides</li>
+					</ol>
+				</div>
+			</div>
 		</div>
-
-		<div style="background-color:none; border:none; border-radius: 0px;" class="flexbox-item flexbox-item-2">
-			<img src="images/magnetic.jpg" alt="Magnetic album cover">
-
-
-		</div>
-		
-		<div class="container"> 
-		<h2 class="container flexbox-item flexbox-item-2 show-element" style="border:none"> 
-			<span class="desktop-text">HOVER TO REVEAL TRACKLIST</span>
-			<span class="mobile-text">HERE'S THE TRACKLIST</span>
-			
-		</h2>
-			
-		<div class="flexbox-item flexbox-item-2 ">
-			
-			
-			<ol style = "font-size: 20px" class = "hidden-element">
-				<li>Lost & Found</li>
-				<li>Echo</li>
-				<li>Neon Chamber</li>
-				<li>Horizontal Lines</li>
-				<li>Sunset Boulevard</li>
-				<li>Sonic Bloom</li>
-				<li>Sync</li>
-				<li>Undertow</li>
-				<li>Low Key</li>
-				<li>Stardust Serenade</li>
-				<li>Nebula</li>
-				<li>Solar Flares</li>
-				<li>Electric Tides</li>
-			
-			</ol>
-
-		</div>
-	</div>
-
-
-
-	  </div>
-		
-	 
-</body>
+	</body>
 </html>
