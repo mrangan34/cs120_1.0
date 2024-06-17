@@ -20,6 +20,15 @@
             .container:hover .hidden-element {
                 visibility: visible;
             }
+
+		.mobile-text{
+		visibility:hidden;
+
+		}
+		.desktop-text{
+		visibility:visible
+		
+		}	
 		}
 
 		
@@ -27,6 +36,14 @@
 
 		.hidden-element{
 		visibility:visible;
+		}
+		.mobile-text{
+		visibility:visible;
+
+		}
+		.desktop-text{
+		visibility:hidden
+		
 		}
 
 }
@@ -73,7 +90,11 @@
 		</div>
 		
 		<div class="container"> 
-		<h2 class="container flexbox-item flexbox-item-2 show-element" style="border:none"> HOVER TO REVEAL TRACKLIST!</h2>
+		<h2 class="container flexbox-item flexbox-item-2 show-element" style="border:none"> 
+			<span class="desktop-text">HOVER TO REVEAL TRACKLIST!</span>
+			<span class="mobile-text">HERE'S THE TRACKLIST!</span>
+			
+		</h2>
 			
 		<div class="flexbox-item flexbox-item-2 ">
 			
