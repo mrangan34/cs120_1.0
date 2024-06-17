@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="mystyle.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
+<meta name="viewport" content="width=device-width, initial-scale=1" />
   
 <html>
 
@@ -11,30 +11,40 @@
   
 </head>
 
-<nav>
-	<a href="home.html" style="font-size:40px">Home</a>
-	<a href="upcomingProject.html" style="font-size:40px">Upcoming Projects</a>
-	<a href="tour.html" style="font-size:40px">Tour</a>
-	<a href="contact.html" style="font-size:40px">Contact</a>
-
-</nav>
+<header> 
+	<nav style="position:fixed">
+		<ul>
+			<li>
+				
+			</li>
+		</ul>
+		<!-- hamburger menu -->
+		<label for='menu' tabindex="0">
+			<i class="fas fa-bars"></i>
+		</label>
+		<input id='menu' type='checkbox' />
+		<!-- collapsable menu -->
+		<ul style="font-family:Anton;">
+			<li><a href="home.html"> Home </a></li>
+			<li><a href='upcomingProject.html'>Upcoming Projects</a></li>
+			<li><a href='tour.html'>Tour</a></li>
+			<li><a href='contact.html'>Contact</a></li>
+		</ul>
+	</nav>
+</header>
 
 <body>
-	<br><br><br>
 	
-  <div class="hero-image">
-	<div class="hero-text">
-	  The Internet 
-	</div>
-  </div>
-
-  <div id="bannerimage" ></div>
-
+	
+<div class="flexbox-container" style="border:none; padding:none; margin:none; top:0%;"> 
+  <div class="hero-image flexbox-item flexbox-item-3">
   <a href="https://open.spotify.com/artist/7GN9PivdemQRKjDt4z5Zv8/"><img src="images/spotify.png" alt="facebook icon" class="fixed-icon" style="width:42px;height:42px;"></a>
+</div>
+</div>
 
   <div class = "flexbox-container">
 	<div class="flexbox-item flexbox-item-2"> 
-		<h2> Bio</h2>
+		<h2> We are: The Internet, a soul band from LA!</h2>
 	</div>
 	<div class="flexbox-item flexbox-item-2">
 		<p> 
