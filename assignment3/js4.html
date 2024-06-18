@@ -1,0 +1,42 @@
+<!-- Problem 4:  Get two numbers from the user using prompt() 
+that will represent a range (ex., 2 through 20).  
+Display only the odd numbers in the range on the page.  
+Then display the sum of all of the numbers in the range on the page.  
+You may only use one loop to do this. -->
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Problem 6</title>
+</head>
+
+<body>
+<script>
+	firstNumber = prompt("Please enter a number.");
+	secondNumber = prompt("Please enter another number.");
+	
+	if(parseInt(firstNumber) > parseInt(secondNumber)) {
+		smallestNumber = secondNumber;
+		largestNumber = firstNumber;
+	}
+	else {
+		smallestNumber = firstNumber;
+		largestNumber = secondNumber;
+	}
+
+
+	runningTotal = 0;
+	for (i = parseInt(smallestNumber); i<= parseInt(largestNumber); i++) {
+		if (i % 2 != 0) {
+			document.write(i + "<br>");
+		}
+
+		runningTotal = runningTotal + i;
+	}
+
+	document.write(runningTotal);
+	
+	 </script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!-- Problem 1:  Ask the user for their first name.  
+Now ask the user for their last name.  
+(You will need to use prompt() twice). 
+Display the response in a popup (alert) as:  
+"Your name is <name>" - filling in their full name.  -->
+
+<!-- Now ask the user for the number of children they have. 
+Display the number of children on the page as a 
+grammatically correct sentence 
+( “You have no children”, “You have 1 child” or 
+“You have 2 children”, etc). Note - this should 
+be on the page (not in a popup) -->
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Problem 6</title>
+</head>
+
+<body>
+
+<script>
+firstName = prompt("What is your first name?");
+lastName = prompt("What is your last name?");
+alert("Your name is " + firstName + " " + lastName);
+numChildren = prompt("How many children do you have? Please enter the number as an integer.");
+
+// Source of function below: slightly modified from 
+// https://stackoverflow.com/questions/10834796/validate-that-a-string-is-a-positive-integer
+function isInDesiredForm(numChildren) {
+	var n = Math.floor(Number(numChildren));
+	return String(n) === numChildren && n >= 0;
+}
+
+if (isInDesiredForm(numChildren) == 0) {
+	document.write("Hey, that doesn't make sense! Make sure to enter the number as an integer that is 0 or greater.")
+}
+
+else if (numChildren == 0) {
+	document.write("You have no children.");
+}
+
+else if (numChildren == 1) {
+	document.write("You have 1 child.");
+
+}
+
+else {
+	document.write("You have " + numChildren + " children.");
+
+}
+
+</script>
+</body>
+</html>
