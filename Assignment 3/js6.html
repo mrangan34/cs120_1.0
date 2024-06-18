@@ -1,0 +1,61 @@
+<!-- Problem 6: 
+
+a) Create a <div> on the page with an id = "result".
+
+b) Create a function called count() that takes two parameters: 
+an array of numbers and a value.  The function should return a 
+count of the number of items in the array that is less than the 
+value of the parameter.
+For example, if the array is 3 55 30 28 9 12
+and the value is:  10
+the function would return 2
+
+c) Create a second function called testCount() to create the array, 
+call count() and display the result in the <div> created in part a .  
+	You may hard code the array and the value in the second function.   
+	testCount() should have no parameters or return value.
+
+Now call testCount() from  your script. -->
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Problem 6</title>
+</head>
+
+<body>
+
+<div id="result"> 
+
+</div>
+
+<script language="javascript">
+counter = 0;
+function count(array, value)
+{
+	for (i=0; i<array.length; i++) {
+		if (array[i] < value) {
+			counter++;
+		}
+	}
+	return counter;
+}
+
+
+function testCount()
+{
+	const arrayNumbers = ["5","9","13","14","50","62","79","90","99","101","1119"];
+	var exampleValue = 79;
+
+	var result = count(arrayNumbers, exampleValue);
+	document.getElementById('result').innerHTML = result;
+	
+}
+
+testCount();
+	
+</script>
+
+</body>
+</html>
