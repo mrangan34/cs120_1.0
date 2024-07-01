@@ -1,0 +1,82 @@
+<!-- Problem 5: 
+
+Create a <select> element as a list (not a dropdown element- hint, 
+  set the size attribute of the <select> ).
+The <select> should display a list of at least 10 states - 
+  use Javascript to create the <option> elements using an 
+    array of the states. By default, the first item should 
+    be selected.
+Adjacent to the <select> list is a button labeled "Add State"
+Below the list is a div with a border and a button labeled 
+"Clear States"
+When the user clicks "Add State", the selected state in the 
+list should appear below in the div.  The user may continue 
+to add more states to the list in the div
+When the user clicks "Clear States" the div should be emptied
+ A demo of how this problem should work is here:  
+ https://tufts.zoom.us/rec/share/g4HrwuS4XCPPzYNvmVzD616yIDLPTtMEuHkGEuFaIoJqZ2qQJ-FGm3Otk1h7EJHE.hgqnQIRrvysogoj7 Links to an external site.
+
+  -->
+
+  <!doctype html>
+  <html>
+  <head>
+  <meta charset="utf-8">
+  <title>Problem 5</title>
+  </head>
+  
+  <body>  
+
+    <div>
+      <select id="selector" size=10>
+      </select>
+
+      <button id="addStateBtn">Add State</button>
+    </div>
+
+    <div id="addedStates" style="border:thin solid black">
+      
+    </div>
+    <button id="clearStatesBtn"> Clear States</button>
+    
+
+<script>
+
+statesArray = ["Massachusetts", "Kentucky", "Texas", "California", 
+"Florida", "Alabama", "Colorado", "Utah", "Louisiana", "Missouri"]
+
+function addElement(){
+  const selectElement = document.getElementById("selector");
+  statesArray.forEach(function(state){
+    const newState = document.createElement("option");
+    newState.textContent = state;
+    selectElement.appendChild(newState);
+  });
+  selectElement.selectedIndex = 0;
+}
+
+function addState(){
+  const selectElement = document.getElementById("selector");
+  const selectedIndex = selectElement.selectedIndex;
+  const selectedState = selectElement.options[selectedIndex].textContent;
+
+  const statesListDiv = document.getElementById("addedStates");
+  const newStateDiv = document.createElement("div");
+  newStateDiv.textContent = selectedState;
+  statesListDiv.appendChild(newStateDiv);
+}
+
+function clearState(){
+  const statesListDiv = document.getElementById("addedStates");
+  statesListDiv.innerHTML = ''; // Clear all child elements
+}
+
+document.addEventListener("DOMContentLoaded", function() {addElement();});
+
+document.getElementById('addStateBtn').addEventListener('click', function() {addState();});
+document.getElementById("clearStatesBtn").addEventListener('click', function() {clearState();});
+
+
+</script>
+</body>
+</html>

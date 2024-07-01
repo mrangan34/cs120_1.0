@@ -1,0 +1,51 @@
+<!-- Problem 3:  Problem 3: 
+
+Create a form with an input box to get a user's name
+Add 3 buttons to the form - the buttons should be labeled:  
+"Hello", "Good Bye", and "Greetings" respectively
+Do not include a submit button with the form
+Create a function called "speak" that has a parameter called "prefix"
+speak(prefix)
+speak() should pop up an alert that displays the prefix 
+followed by the name in the input box
+for example, if the user enters "Bill" in the input box,
+ speak("Hello") should pop up:  "Hello Bill"
+Assign an event handler to each button using 
+the speak function.  Do this within the HTML code for the button -->
+ <!doctype html>
+ <html>
+ <head>
+ <meta charset="utf-8">
+ <title>Problem 3</title>
+ </head>
+ 
+ <body>
+
+	<form action="/my-handling-form-page" method="post" id="username">
+		<ul>
+			<li>
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="username" />
+			</li>
+
+		</ul>
+
+
+	</form>
+
+	<button type="button" form="form1" value="Hello" onclick="speak('Hello')">Hello</button>
+	<button type="button" form="form1" value="Good Bye" onclick="speak('Good bye')">Good Bye</button>
+	<button type="button" form="form1" value="Greetings" onclick="speak('Greetings')">Greetings</button>
+
+ <script>
+
+function speak(prefix){
+	var name = document.getElementById('name').value;
+	alert(prefix + " " + name);
+}
+
+
+ </script>
+
+</body>
+</html>

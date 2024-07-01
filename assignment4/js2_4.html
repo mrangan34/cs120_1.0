@@ -1,0 +1,49 @@
+<!-- Problem 4: 
+
+Copy the form from Problem 3 with the input box and the three buttons
+Rework the speak() event handler such that it does NOT have a parameter.  Instead, use the clicked button text to get the greeting prefix
+Assign the event handler within window.onload -->
+<!doctype html>
+ <html>
+ <head>
+ <meta charset="utf-8">
+ <title>Problem 3</title>
+ </head>
+ 
+ <body>
+
+	<form action="/my-handling-form-page" method="post" id="username">
+		<ul>
+			<li>
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="username" />
+			</li>
+
+		</ul>
+
+
+	</form>
+
+	<button type="button" form="form1" id="helloButton" value="Hello">Hello</button>
+	<button type="button" form="form1" id="goodbyeButton" value="Good Bye">Good Bye</button>
+	<button type="button" form="form1" id="greetingsButton" value="Greetings">Greetings</button>
+
+ <script>
+
+function speak(){
+	var name = document.getElementById('name').value;
+	var prefix = this.innerText;
+	alert(prefix + " " + name);
+}
+
+
+window.onload = function() {
+    document.getElementById('helloButton').onclick = speak;
+    document.getElementById('goodbyeButton').onclick = speak;
+    document.getElementById('greetingsButton').onclick = speak;
+}
+
+ </script>
+
+</body>
+</html>
