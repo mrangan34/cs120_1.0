@@ -1,0 +1,62 @@
+[ 
+    {"title" : "Isn't She Lovely",
+    "artist" : "Stevie Wonder",
+    "yearReleased" : 1976,
+    "genre": ["soul"]
+    },
+
+    {"title" : "I Just Called to Say I Love You",
+    "artist" : "Stevie Wonder",
+    "yearReleased" : 1984,
+    "genre": ["soul"]
+    },
+
+    {"title" : "For Once in My Life",
+    "artist" : "Stevie Wonder",
+    "yearReleased" : 1968,
+    "genre": ["soul"]
+    },
+
+    {"title" : "Red Wine Supernova",
+    "artist" : "Chapell Roan",
+    "yearReleased" : 2023,
+    "genre": ["indie", "pop"]
+    },
+
+    {"title" : "Casual",
+    "artist" : "Chapell Roan",
+    "yearReleased" : 2023,
+    "genre": ["indie", "pop"]
+    },
+
+    {"title" : "Man! I Feel Like A Woman!",
+    "artist" : "Stevie Wonder",
+    "yearReleased" : 1997,
+    "genre": ["country"]
+    },
+
+    {"title" : "You're Still The One",
+    "artist" : "Stevie Wonder",
+    "yearReleased" : 1997,
+    "genre": ["country"]
+    },
+
+    {"title" : "16 Carriages",
+    "artist" : "Stevie Wonder",
+    "yearReleased" : 1995,
+    "genre": ["soul","country"]
+    },
+
+    {"title" : "Texas Hold 'Em",
+    "artist" : "Stevie Wonder",
+    "yearReleased" : 2024,
+    "genre": ["country","pop","soul"]
+    },
+
+    {"title" : "Riverdance",
+    "artist" : "Stevie Wonder",
+    "yearReleased" : 2024,
+    "genre": ["folk","country"]
+    }
+
+]

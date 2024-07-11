@@ -1,0 +1,125 @@
+<!-- Problem 3:  Problem 3: 
+
+Part 3: Filter the data
+
+In json3.html, read the songs,json data and store in a variable as you did in json2.html.
+
+On the page, display a form that that will allow the user to select a genre as follows:
+
+     Include a drop-down box (<select>) listing the possible genres. The genres must be read from the JSON data  (it must NOT be hard coded). 
+     Ie, I should be able to change the JSON file and the page will still work.
+
+Add a button labeled "Filter".  When the button is clicked, display the list of songs (titles only) that match the selected genre.
+(Display within a div on the page).  Do not display any other data for each song other than the title.
+Use jQuery where possible for this part.  For example. use it to read the form elements, to assign the event handler, and to write to the page.
+
+  -->
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Problem 3</title>
+
+<style>
+	.song {
+		margin-bottom: 10px;
+		padding: 10px;
+		background-color: azure;
+		border: 2px solid black;
+	}
+	.songTitle {
+		font-size: 18px;
+	}
+</style>
+
+</head>
+
+<body>
+	<script
+	src="https://code.jquery.com/jquery-3.7.1.js"
+	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+	crossorigin="anonymous"></script>
+
+	<div>
+		<label for="genreSelect"> Select Genre:</label>
+		<select id="genreSelect"> </select>
+		<button id="filterButton">Filter</button>
+	</div>
+
+
+	<div id="songDisplay">
+	</div>
+
+
+<script>
+
+
+
+
+</script>
+
+<script>
+$(document).ready(function() {
+	var songsData;
+	$.get( "songs.json", function(data) {
+		songsData = data;
+		var genresArray = [];
+		data.forEach(function(song) {
+			song.genre.forEach(function(genre) { 
+				if ($.inArray(genre, genresArray) == -1) {
+					genresArray.push(genre);					
+				}
+			})
+		})
+		populateGenres(songsData);
+
+		$('#filterButton').click(function() {
+
+			var selectedGenre = $('#genreSelect').val();
+			console.log(songsData);
+			var filteredSongsArray = songsData.filter(function(song) {
+				return song.genre.includes(selectedGenre);
+			});
+			console.log(filteredSongsArray);
+			$.each(filteredSongsArray, function(index,song) {
+			})	
+			$('#songDisplay').empty(); //clear previous songs
+		$.each(filteredSongsArray, function(index, song) {
+			var songElement = $('<div>').addClass('song');
+			var songTitle = $('<span>').addClass('songTitle').text(song.title);
+			songElement.append(songTitle);
+			$('#songDisplay').append(songElement);
+		});
+		});
+
+	});
+	
+});
+
+//read json
+//for each song, get the array of genres
+//add to list if new
+function populateGenres(songsData) {
+	var genresArray = [];
+	$.each(songsData, function(index, song) {
+		$.each(song.genre, function(index, genre) {
+		if ($.inArray(genre, genresArray) == -1) {
+			genresArray.push(genre);
+			//add option to the select
+			var genreOption = $('<option>').attr('value',genre).text(genre);
+			$('#genreSelect').append(genreOption);
+		}
+	})
+	});
+}
+
+
+
+</script>
+
+
+
+</body>
+</html>

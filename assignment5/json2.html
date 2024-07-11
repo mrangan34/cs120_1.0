@@ -1,0 +1,86 @@
+<!-- 
+Part 2: Read the JSON from a file
+Using the same data, create a separate file called songs.json.  It should contain only the JSON object – you may not have any variable assignments in this file.
+
+In json2.html,  read the songs.json data using $.get and store in a variable.
+
+Display the json data on the page within a <div> section (hint use the innerHTML property)
+The information should be displayed similar to the following.  Feel free to embellish the styling.
+
+Who Loves You
+Artist: The Four Seasons
+Genre: rock, disco
+Released 1975 -->
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Problem 2</title>
+
+<style>
+.song {
+	margin-bottom: 10px;
+	padding: 10px;
+	background-color: azure;
+	border: 2px solid black;
+}
+
+.songTitle {
+	font-size: 18px;
+}
+
+.songDetails {
+	margin-top: 5px;
+	font-style: italic;
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+
+	<div id="songDisplay">
+
+	</div>
+
+	<script
+	src="https://code.jquery.com/jquery-3.7.1.js"
+	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+	crossorigin="anonymous"></script>
+
+<script>
+$.get( "songs.json", function(data) {
+		data.forEach(function(song) {
+			// <!-- create div for each song -->
+			var songDiv = $('<div class="song">');
+
+			// <!-- put song info inside div -->
+			var title = $('<div class="songTitle">').text(song.title);
+			var artist = $('<div class="songDetails">').text(song.artist);
+			var yearReleased = $('<div class="songDetails">').text(song.yearReleased);
+			var genreList = $('<ul class="songDetails">');
+
+			song.genre.forEach(function(genre) {
+				var eachGenre = $('<li>').text(genre);
+				genreList.append(eachGenre);
+			});
+
+			songDiv.append(title);
+			songDiv.append(artist);
+			songDiv.append(yearReleased);
+			songDiv.append(genreList);
+			$('#songDisplay').append(songDiv);
+		});
+
+	});
+
+</script>
+
+
+
+</body>
+</html>

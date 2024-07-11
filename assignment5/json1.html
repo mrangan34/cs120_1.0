@@ -1,0 +1,98 @@
+<!-- Problem 1: 
+
+Part 1:  Create a JSON
+In json1.html, create a JSON to represent a song list.  
+Each song should include the title, the artist, the 
+year the song was released and one or more music genres 
+(genre could be country, rock, pop, metal, ska, etc).  
+The genres should be stored as an array within the JSON.
+
+Include at least 10 songs. The data must be real.  
+You must have songs from at least 3 genres and at least 3 artists.  
+At least one song must have more than one genre.  
+
+Place the JSON object at the top of the file - it should 
+be assigned to a variable.
+
+Convert the json object to a string and display the 
+resulting text string. -->
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Problem 1</title>
+</head>
+<body>
+<script>
+
+var songList =
+[ 
+    {"title" : "Isn't She Lovely",
+    "artist" : "Stevie Wonder",
+    "yearReleased" : 1976,
+    "genre": "soul"
+    },
+
+    {"title" : "I Just Called to Say I Love You",
+    "artist" : "Stevie Wonder",
+    "yearReleased" : 1984,
+    "genre": "soul"
+    },
+
+    {"title" : "For Once in My Life",
+    "artist" : "Stevie Wonder",
+    "yearReleased" : 1968,
+    "genre": "soul"
+    },
+
+    {"title" : "Red Wine Supernova",
+    "artist" : "Chapell Roan",
+    "yearReleased" : 2023,
+    "genre": ["indie", "pop"]
+    },
+
+    {"title" : "Casual",
+    "artist" : "Chapell Roan",
+    "yearReleased" : 2023,
+    "genre": ["indie", "pop"]
+    },
+
+    {"title" : "Man! I Feel Like A Woman!",
+    "artist" : "Stevie Wonder",
+    "yearReleased" : 1997,
+    "genre": "country"
+    },
+
+    {"title" : "You're Still The One",
+    "artist" : "Stevie Wonder",
+    "yearReleased" : 1997,
+    "genre": "country"
+    },
+
+    {"title" : "16 Carriages",
+    "artist" : "Stevie Wonder",
+    "yearReleased" : 1995,
+    "genre": ["soul","country"]
+    },
+
+    {"title" : "Texas Hold 'Em",
+    "artist" : "Stevie Wonder",
+    "yearReleased" : 2024,
+    "genre": ["country","pop","soul"]
+    },
+
+    {"title" : "Riverdance",
+    "artist" : "Stevie Wonder",
+    "yearReleased" : 2024,
+    "genre": ["folk","country"]
+    }
+
+];
+
+var jsonString = JSON.stringify(songList);
+console.log(jsonString);
+
+</script>
+</body>
+</html>
