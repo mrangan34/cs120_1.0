@@ -1,17 +1,17 @@
 [ 
-    {"title" : "AIsn't She Lovely",
+    {"title" : "Isn't She Lovely",
     "artist" : "Stevie Wonder",
     "yearReleased" : 1976,
     "genre": ["soul"]
     },
 
-    {"title" : "AI Just Called to Say I Love You",
+    {"title" : "I Just Called to Say I Love You",
     "artist" : "Stevie Wonder",
     "yearReleased" : 1984,
     "genre": ["soul"]
     },
 
-    {"title" : "AFor Once in My Life",
+    {"title" : "For Once in My Life",
     "artist" : "Stevie Wonder",
     "yearReleased" : 1968,
     "genre": ["soul"]
@@ -23,37 +23,37 @@
     "genre": ["indie", "pop"]
     },
 
-    {"title" : "ACasual",
+    {"title" : "Casual",
     "artist" : "Chapell Roan",
     "yearReleased" : 2023,
     "genre": ["indie", "pop"]
     },
 
-    {"title" : "AMan! I Feel Like A Woman!",
+    {"title" : "Man! I Feel Like A Woman!",
     "artist" : "Shania Twain",
     "yearReleased" : 1997,
     "genre": ["country"]
     },
 
-    {"title" : "AYou're Still The One",
+    {"title" : "You're Still The One",
     "artist" : "Shania Twain",
     "yearReleased" : 1997,
     "genre": ["country"]
     },
 
-    {"title" : "A16 Carriages",
+    {"title" : "16 Carriages",
     "artist" : "Beyonce",
     "yearReleased" : 1995,
     "genre": ["soul","country"]
     },
 
-    {"title" : "ATexas Hold 'Em",
+    {"title" : "Texas Hold 'Em",
     "artist" : "Beyonce",
     "yearReleased" : 2024,
     "genre": ["country","pop","soul"]
     },
 
-    {"title" : "ARiverdance",
+    {"title" : "Riverdance",
     "artist" : "Beyonce",
     "yearReleased" : 2024,
     "genre": ["folk","country"]
