@@ -1,0 +1,211 @@
+
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="wordle.css">
+		<meta charset="utf-8">
+		<title>Wordle</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	</head>
+
+	<body>
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.js"
+			integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+			crossorigin="anonymous"></script>
+		
+		<div id="board"> </div>
+		<div id="guess">
+			<form name="guess" id="form" onsubmit="return false;"> 
+				Guess a word: <br>
+				<input type="text" name="inputBox" value="">
+				<input type="button" name="button" value="Submit Guess" onClick="userGuess(this.form)">
+				<br><br>
+
+			</form> 
+		</div>
+
+		<br>
+		<script>
+			
+			var height=6; //number of guesses
+			var width=5; //length of word
+			var row = -1; //current guess
+			var col = 0; //current letter of guess
+			var possibleSolutions = ["fuzzy","cable", "eagle", "eager", "facet", "faces", "fable", "jaded","label","macaw","nacho","paced","rabbi","udder","vague","wacky","yacht","waded","rabid","feral","labor","habit", "anger", "hefty", "blend", "media", "pivot", "major","music","legal","often","lease", "least", "begun", "beach", "audit", "bench", "blame", "angle", "again", "admit", "alive", "apple", "glass", "globe", "human", "index", "earth", "north", "mouse", "party", "panel", "score", "rural", "sugar", "style", "theme", "truck", "truth", "water", "urban", "upset", "worth", "voice", "vital", "valid", "value", "yield", "rival", "scope", "pitch"]; //
+			function chooseSolution() {
+				return(possibleSolutions[Math.floor(Math.random() * possibleSolutions.length)]);
+			}
+			var solution = chooseSolution();
+			console.log(solution);
+			var solutionCopy = solution;
+
+			window.onload = function(){
+				initialize();
+			}
+		
+			//x is a placeholder value, to be overwritten later
+			const solutionArray = [ { key : solution[0] , value : "x" } , 
+                     { key : solution[1] , value : "x" } , 
+                     { key : solution[2] , value : "x" } ,
+                     { key : solution[3] , value :"x"} ,
+                     { key : solution[4] , value : "x" } ];
+
+			function initialize() {
+				//create board
+				Array.from(Array(height).keys()).forEach(r => {
+					Array.from(Array(width).keys()).forEach(c => {
+						let tile = document.createElement("span");
+						tile.id = r.toString() + c.toString();
+						tile.classList.add("tile");
+						tile.innerText = "";
+						document.getElementById("board").appendChild(tile);
+				});
+			});
+		}
+
+		function userGuess(form){
+			var inputValue = form.inputBox.value.toLowerCase();
+			document.getElementById("form").reset();
+			const guessArray = 
+				[ { key : inputValue[0] , value : "" } , 
+				{ key : inputValue[1] , value : "" } , 
+				{ key : inputValue[2] , value : "" } ,
+				{ key : inputValue[3] , value :""} ,
+				{ key : inputValue[4] , value : "" } ];
+
+			verifyWord(inputValue).then(result=> {
+				if (result == 1) {
+					populateRow(inputValue);
+					if(inputValue == solution) {
+						setTimeout(function (){
+							alert("Congratulations, you win!");
+							showButton();
+						}, 500);
+					}
+				} else {
+					alert("The word you entered was not valid. Please enter a 5-letter word.")
+				}
+			})			
+		}
+
+		async function verifyWord(word){
+			try { 
+				var apiUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/" + word;
+				let response = await fetch(apiUrl);
+				if(!response.ok) {
+					return 0;
+				}
+
+			let data = await response.json();
+			if (Array.isArray(data) && data.length > 0 && word.length==5) {
+				return 1;
+					
+				} else {
+					return 0;
+				}
+			}
+			catch (e) {
+			return 0;
+			}
+		}
+
+
+		function populateRow(word) {
+			row++;
+			if (row == 5 && word !=solution) {
+				setTimeout(function (){
+				alert("Game over! The solution was: " + solution);
+				showButton();
+				}, 500);
+			}
+			
+			for (let c=0; c<solutionArray.length; c++) {
+				var currTile = document.getElementById((row).toString() + c.toString());
+				currTile.innerText = word[c];
+			
+				if (!solution.includes(word[c])) {
+					currTile.style.backgroundColor = "lightGray";
+				}
+
+				else if (word[c] == solution[c]){
+					solutionArray[c].value = "green";
+					currTile.style.backgroundColor = "green";
+				}
+
+				else if (solution.includes(word[c])) {
+					for (let i = 0; i < solutionArray.length; i++) {
+
+						if (solutionArray[i].key == word[c] && solutionArray[i].value == "x") {
+							currTile.style.backgroundColor = "yellow";
+							solutionArray[i].value = "yellow";
+						}
+						else if (solutionArray[i].key == word[c] && solutionArray[i].value != "x") {
+							currTile.style.backgroundColor = "lightGray";
+							solutionArray[i].value = "lightGray";
+						}
+					}
+				}
+			}
+		}
+
+		
+		function newGame() {
+			clearBoard();
+			
+			height=6; //number of guesses
+			width=5; //length of word
+			row = -1; //current guess
+			col = 0; //current letter of guess
+			possibleSolutions = ["fuzzy","cable", "eagle", "eager", 
+			"facet", "faces", "fable", "jaded","label",
+			"macaw","nacho","paced","rabbi","udder","vague",
+			"wacky","yacht","waded","rabid","feral","labor",
+			"habit", "anger", "hefty", "blend", "media", "pivot", 
+			"major","music","legal","often","lease", "least", 
+			"begun", "beach", "audit", "bench", "blame", "angle", 
+			"again", "admit", "alive", "apple", "glass", "globe", 
+			"human", "index", "earth", "north", "mouse", "party", 
+			"panel", "score", "rural", "sugar", "style", "theme", 
+			"truck", "truth", "water", "urban", "upset", "worth", 
+			"voice", "vital", "valid", "value", "yield", "rival", 
+			"scope", "pitch"]; //
+
+			function chooseSolution() {
+				return(possibleSolutions[Math.floor(Math.random() * possibleSolutions.length)]);
+			}
+			solution = chooseSolution();
+			console.log(solution);
+		}
+
+		function showButton(){
+			let newGameButton = document.createElement("input");
+			newGameButton.setAttribute("type", "button");
+			newGameButton.setAttribute("id", "newGameButton");
+			newGameButton.setAttribute("value", "Start a New Game!");
+			newGameButton.setAttribute("onClick", "newGame(this.form)");
+			document.getElementById("form").appendChild(newGameButton);
+		}
+
+		function clearBoard() {
+			var buttonToRemove = document.getElementById("newGameButton");
+			if (buttonToRemove) {
+				buttonToRemove.remove();
+			}
+
+			for (let r=0; r<height; r++) {
+				for (let c=0; c<width; c++) {
+					var currTile = document.getElementById((r).toString() + c.toString());
+					currTile.innerText = "";
+					currTile.style.backgroundColor = "white";
+				}
+			}
+
+			for (let i=0; i<solutionArray.length; i++) {
+				solutionArray[i].value == "x";
+			}
+		}
+
+		</script>
+	</body>
+</html>
