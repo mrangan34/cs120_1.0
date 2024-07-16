@@ -39,6 +39,7 @@
 			}
 			var solution = chooseSolution();
 			
+			
 			solutionCopy = solution;
 			console.log(solution);
 			
@@ -139,7 +140,8 @@
 				
 				else {
 					
-					if (solutionCopy.includes(word[c])) {
+					if (solutionCopy.includes(word[c]) &&
+					currTile.style.backgroundColor != "green") {
 						currTile.style.backgroundColor = "yellow";
 						solutionCopy = solutionCopy.replace(word[c],"");
 
