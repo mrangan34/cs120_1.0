@@ -38,6 +38,7 @@
 				return(possibleSolutions[Math.floor(Math.random() * possibleSolutions.length)]);
 			}
 			var solution = chooseSolution();
+			
 			solutionCopy = solution;
 			console.log(solution);
 			
@@ -115,6 +116,7 @@
 				}, 500);
 			}
 			
+
 			for (let c=0; c<solution.length; c++) {
 				var currTile = document.getElementById((row).toString() + c.toString());
 				currTile.innerText = word[c];
@@ -125,7 +127,12 @@
 
 				}
 
-				else if (!(solution.includes(word[c])))
+			}
+			for (let c=0; c<solution.length; c++) {
+				var currTile = document.getElementById((row).toString() + c.toString());
+				currTile.innerText = word[c];
+
+				if (!(solution.includes(word[c])))
 					 {
 						currTile.style.backgroundColor = "lightGray";
 					}	
@@ -137,14 +144,14 @@
 						solutionCopy = solutionCopy.replace(word[c],"");
 
 					}
-					else {
-						currTile.style.backgroundColor = "lightGray";
-					}
-						
-						
-				}
+					else if (!(solutionCopy.includes(word[c]))) {
+						if (currTile.style.backgroundColor != "green" && 
+							currTile.style.backgroundColor != "yellow" &&
+							currTile.style.backgroundColor != "lightGray") {
+								currTile.style.backgroundColor = "lightGray";}
+					}		
+				}			
 			}
-							
 		}
 
 	
