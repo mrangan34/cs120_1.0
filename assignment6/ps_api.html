@@ -1,0 +1,51 @@
+
+	<!doctype html>
+	<html>
+	<head>
+	<meta charset="utf-8">
+	<title>Assignment 6</title>
+	</head>
+	<body>  
+
+  
+  <script>
+  
+fetch(
+    'https://openlibrary.org/search.json?title=dog', {method: 'GET'})
+    .then((response) => response.json())
+    .then((data) => {
+		const books = data.docs;
+		const resultsDiv = document.getElementById('results');
+		resultsDiv.innerHTML = '';
+
+		if (books && books.length > 0) {
+			books.forEach((book) => {
+				const bookDiv = document.createElement('div');
+				const title = book.title;
+				const author = book.author_name[0]
+				const wantToRead = book.want_to_read_count;
+				const rating = book.ratings_average;
+
+
+				bookDiv.innerHTML = `
+				<h2>${title}</h2>
+				<p>Author: ${author} </p> 
+				<p>Rating: ${rating} </p>
+				<p>Number of people that want to read this book: ${wantToRead} </p> <br>
+				<br>
+				`;
+
+				resultsDiv.appendChild(bookDiv);
+			});
+		}
+	})
+
+
+  </script>
+  	<div id="results">  
+		Populating a list of books with "dog" in the title:
+	</div>
+
+  </body>
+  </html>
+  
