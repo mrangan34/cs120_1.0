@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office Hours</title>
+    <style>
+      
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        .hours {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Office Hours</h1>
+
+
+<div id="officeHours"> </div>
+    
+    <script>
+        
+        function fetchOfficeHours() {
+            fetch('assoc_array.php')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('officeHours').innerHTML = data;
+                })
+                .catch(error => console.error('Error', error));
+        }
+
+        window.onload = fetchOfficeHours;
+    </script>
+</body>
+</html>
+
+
+
+
+</body>
+</html>
